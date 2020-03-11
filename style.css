@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #efeff4;
+  font-family: Helvetica, Arial;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: #007aff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background: #f7f7f8;
+  border-bottom: 1px solid #a7a7aa;
+  display: flex;
+  align-items: center;
+  height: 85px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  transform: translate3d(0, -100%, 0);
+  transition: transform 500ms ease-in-out;
+}
+
+header.show {
+  transform: translate3d(0, 0, 0);
+}
+
+header h1 {
+  width: 100%;
+  text-align: center;
+}
+
+header button.goBack {
+  position: absolute;
+  left: 15px;
+  width: 55px;
+  height: 55px;
+  z-index: 5;
+}
+
+header button.goBack i {
+  transform: rotate(45deg);
+  border-color: #82c12b;
+  left: 33%;
+  width: 54%;
+  height: 54%;
+}
+
+.arrow {
+  position: relative;
+  display: block;
+  border: 0px;
+  border-width: 6.4px;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-style: solid;
+}
+
+main {
+  margin-top: 125px;
+}
+
+main > .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.whiteBlock {
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  margin-bottom: 40px;
+  border-top: 1px solid #c8c7cc;
+  border-bottom: 1px solid #c8c7cc;
+  opacity: 0;
+  transform: translate3d(0, 30%, 0);
+  transition: opacity 600ms ease-in-out,
+  transform 600ms ease;
+  will-change: transform, opacity;
+}
+
+.whiteBlock.show {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.whiteBlock h2 {
+  padding-right: 30px;
+  display: block;
+  margin: 25px 0;
+  color: #82c12b;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.whiteBlock hr {
+  border-top: 0;
+  border-bottom: 1px solid #c8c7cc;
+}
+
+.whiteBlock figcaption {
+  position: relative;
+  padding-right: 50px;
+  width: 100%;
+  color: #4d575d;
+}
+
+.whiteBlock figcaption i.arrow {
+  border-color: #c8c8cd;
+  position: absolute;
+  top: calc(50% - 7.5px);
+  right: 30px;
+  width: 15px;
+  height: 15px;
+  border-width: 3px;
+  border-top-width: 0;
+  border-right-width: 0;
+  transform: rotate(-135deg) translateX(0);
+}
+
+.whiteBlock figcaption u {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px;
+  padding-left: 30px;
+  margin-top: 15px;
+  text-align: right;
+  position: relative;
+  left: -30px;
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.whiteBlock a {
+  display: inline-block;
+  font-size: 22px;
+  margin: 20px 0;
+}
+
+.whiteBlock figcaption p {
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+  margin: 20px 0;
+}
+
+.whiteBlock__under {
+  margin-right: 30px;
+}
+
+.greenBtn {
+  background: #82c12b;
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 19px;
+}
+
+.tarifInfo {
+  padding-left: 20px;
+  flex-basis: unset !important;
+  margin: 0 auto 40px !important;
+}
+
+.tarifInfo .greenBtn {
+  margin-right: 20px;
+}
+
+.tarifInfo h2 {
+  padding-right: 20px;
+}
+
+@media (max-width: 639px) {
+  header h1 {
+    font-size: 25px;
+  }
+
+  .whiteBlock {
+    flex-basis: 100% !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .whiteBlock {
+    border: 1px solid #c8c7cc;
+    flex-basis: 47%;
+    margin-left: 1.50%;
+    margin-right: 1.50%;
+  }
+
+  .whiteBlock figcaption p {
+    font-size: 20px;
+  }
+
+  .whiteBlock__under a {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .whiteBlock {
+    flex-basis: 31%;
+    margin-left: 1.16%;
+    margin-right: 1.16%;
+  }
+}
